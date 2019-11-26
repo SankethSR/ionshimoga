@@ -5,7 +5,7 @@
             routerLink="/homeComponent/searchComponent">
                 <img src="{{data.src}}" class="card-img w-100 h-100" style="cursor: pointer;">
                 <div class="card-img-overlay" [ngClass]="{'text-black': !data.color, 'text-white':!data.color}">
-                    <h5 class="card-title">{{ data.name }}</h5>
+                    <h5 class="card-title display-4">{{ data.name }}</h5>
                     <p class="card-text">{{data.content}}</p>
                 </div>
             </div>
