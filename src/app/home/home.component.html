@@ -1,4 +1,21 @@
+<<<<<<< HEAD
 <a ng-model="myclick" href="/homeComponent/searchComponent">click</a>
 
+=======
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div *ngFor="let data of homePageResultSet" class="col-6 h-50">
+            <div class="card shadow-sm mt-2 mb-2 bg-white rounded" style="height: 15rem !important;"
+            routerLink="/homeComponent/searchComponent">
+                <img src="{{data.src}}" class="card-img w-100 h-100" style="cursor: pointer;">
+                <div class="card-img-overlay" [ngClass]="{'text-black': !data.color, 'text-white':!data.color}">
+                    <h5 class="card-title display-4">{{ data.name }}</h5>
+                    <p class="card-text">{{data.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+>>>>>>> 40c4ce1f136f82452d7ff665d65e4df4a588cc4f
 
 <router-outlet></router-outlet>
