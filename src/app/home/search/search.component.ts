@@ -25,7 +25,6 @@ export class SearchComponent implements OnInit {
       "category": this.requestData['category'],
       "area": this.requestData['area']
     }
-    debugger
     this.service.getHomePageData(searchValues)
       .subscribe(data => this.responseData = data);
     console.log("Search Response: " + this.responseData);
@@ -33,6 +32,7 @@ export class SearchComponent implements OnInit {
 
   clearData() {
     this.requestData = [];
+    this.responseData = [];
   }
 
 

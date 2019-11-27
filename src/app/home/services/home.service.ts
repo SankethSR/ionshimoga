@@ -13,7 +13,6 @@ export class HomeService {
 
 
     getHomePageData(data) {
-        debugger
         var searchURL = this.APIURL;
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         let body = data;
