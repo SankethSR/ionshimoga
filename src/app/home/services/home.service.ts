@@ -8,16 +8,17 @@ import { retry, catchError } from 'rxjs/operators';
     providedIn: 'root'
 })
 export class HomeService {
-    APIURL = 'http://localhost:9090';
+    APIURL = 'https://www.ionshimoga.com/search.php';
     constructor(private http: HttpClient) { }
 
-    
-    getHomePageData() {
-        // var incidentcommserviceURL = this.APIURL + "/openissues/0/8";
-        // console.log("Service called, URL : " + incidentcommserviceURL);
-        // return this.http.get(incidentcommserviceURL)
-        console.log("Service called, URL : " + "");
-        return this.http.get("")
+
+    getHomePageData(data) {
+        debugger
+        var searchURL = this.APIURL;
+        let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        let body = data;
+        console.log("Service called, URL : " + searchURL);
+        return this.http.post(searchURL, body, { headers })
     }
 
 }

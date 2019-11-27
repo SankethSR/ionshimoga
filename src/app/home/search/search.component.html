@@ -1,3 +1,114 @@
-    <p>search works!</p>
-    <input type="text"/>
-    <input type="button" value="Search"/>
+<div class="container mt-3">
+    <div class="card col-12 p-2 shadow rounded-pill">
+        <div class="row justify-content-center">
+            <div class="form-group col-3 p-2">
+                <label class="h4">Search</label>
+                <input [(ngModel)]="requestData.search_data" id="search" type="text"
+                    class="form-control form-control-underlined" placeholder="Search">
+            </div>
+            <div class="form-group col-3 p-2">
+                <label class="h4">Category</label>
+                <select [(ngModel)]="requestData.category"
+                    class="form-control custom-select form-control-underlined style-overflow" id="searchCategory"
+                    name="searchCategory">
+                    <option value="all" selected>All</option>
+                    <option value="agriculture">Agriculture &amp; Fertilizers</option>
+                    <option value="atm">ATM</option>
+                    <option value="banks">Banks</option>
+                    <option value="beauty">Beauty &amp; Fashion</option>
+                    <option value="building">Building &amp; Construction Materials</option>
+                    <option value="computer">Computer &amp; Peripherals</option>
+                    <option value="data">Data &amp; Offset Printing</option>
+                    <option value="doctors">Doctors</option>
+                    <option value="education">Education</option>
+                    <option value="electrician">Electrician</option>
+                    <option value="electronics">Electronics &amp; Accessories</option>
+                    <option value="emergency">Emergency Numbers</option>
+                    <option value="engineer">Engineer</option>
+                    <option value="food">Food Products</option>
+                    <option value="fourwheelers">Four Wheelers &amp; Accessories</option>
+                    <option value="goldsmith">Gold Smith &amp; Jewellery Works</option>
+                    <option value="government">Government Offices</option>
+                    <option value="hardwares">Hardwares &amp; Metals</option>
+                    <option value="homeappliances">Home Appliances</option>
+                    <option value="hospitalsmedicals">Hospitals &amp; Medical Stores</option>
+                    <option value="hotelslodges">Hotels &amp; Lodges</option>
+                    <option value="industries">Industries</option>
+                    <option value="jewelleryshops">Jewellery Shops</option>
+                    <option value="medianews">Media &amp; News Reporters</option>
+                    <option value="necessary">Necessary Numbers</option>
+                    <option value="office">Office Stationaries</option>
+                    <option value="petsanimals">Pets &amp; Animals</option>
+                    <option value="realestate">Real Estate</option>
+                    <option value="software">Software</option>
+                    <option value="sports">Sports</option>
+                    <option value="tailors">Tailors</option>
+                    <option value="temple">Temple</option>
+                    <option value="transportation">Transportation &amp; Couriers</option>
+                    <option value="twowheelers">Two Wheelers &amp; Accessories</option>
+                </select>
+            </div>
+            <div class="form-group col-3 p-2">
+                <label class="h4">Area</label>
+                <select [(ngModel)]="requestData.area" class="form-control custom-select form-control-underlined"
+                    id="searchArea" name="searchArea">
+                    <option value="all" selected>All</option>
+                    <option value="apmcyard">APMC Yard</option>
+                    <option value="balrajursroad">Balraj Urs Road</option>
+                    <option value="bhroad">B H Road</option>
+                    <option value="durgigudi">Durgigudi</option>
+                    <option value="fortroad(koteroad)">Fort Road(Kote Road)</option>
+                    <option value="gadikoppa">Gadi Koppa</option>
+                    <option value="gandhibazaar">Gandhi Bazaar</option>
+                    <option value="gandhinagar">Gandhi Nagar</option>
+                    <option value="gardenarea">Garden Area</option>
+                    <option value="gopalagowdaextension">Gopala Gowda Extension</option>
+                    <option value="gurpura">Gurpura</option>
+                    <option value="industrialestate">Industrial Estate</option>
+                    <option value="jailroad">Jail Road</option>
+                    <option value="jpnroad">J P N Road</option>
+                    <option value="krpuram">K R Puram</option>
+                    <option value="kuvempuroad">Kuvempu Road</option>
+                    <option value="llrroad">L L R Road</option>
+                    <option value="navule">Navule</option>
+                    <option value="nehruroad">Nehru Road</option>
+                    <option value="ntroad">N T Road</option>
+                    <option value="otroad">O T Road</option>
+                    <option value="panchavaticolony">Panchavati Colony</option>
+                    <option value="sagarroad">Sagar Road</option>
+                    <option value="savalangaroad">Savalanga Road</option>
+                    <option value="savarlineroad">Savarline Road</option>
+                    <option value="shankarmuttroad">Shankarmutt Road</option>
+                    <option value="tankmohalla">Tank Mohalla</option>
+                    <option value="tilaknagar">Tilak Nagar</option>
+                    <option value="vidyanagara">Vidya Nagara</option>
+                    <option value="vinobhanagar">Vinobha Nagar</option>
+                    <option value="vivekanandabadavane">Vivekananda Badavane</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-12 p-2 text-center">
+            <div class="row justify-content-center">
+                <button type="button" class="col-2 m-2 btn btn-warning" (click)="searchData()">Search</button>
+                <button type="button" class="col-2 m-2 btn btn-danger" (click)="clearData()">Clear</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container-fluid">
+    <div class="row overflow-auto justify-content-center">
+        <div *ngFor="let details of responseData" class="card col-6 m-2">
+            <img src="./assets/images/search.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>

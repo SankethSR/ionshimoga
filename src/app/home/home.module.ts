@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { SearchComponent } from './search/search.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -9,7 +10,8 @@ import { BrowserModule } from '@angular/platform-browser';
     ],
     imports: [
         BrowserModule,
-        HomeRoutingModule
+        HomeRoutingModule,
+        FormsModule
     ],
     providers: [],
 })
