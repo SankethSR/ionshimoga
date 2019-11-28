@@ -1,0 +1,19 @@
+.reduceFont {
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .reduceFont {
+        display: none;
+    }
+}
+
+.increaseFont {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .increaseFont {
+        display: block;
+    }
+}

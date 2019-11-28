@@ -1,11 +1,58 @@
 <div class="container-fluid">
     <div class="row mt-3">
-        <div *ngFor="let data of homePageResultSet" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 h-50">
+        <!-- <div *ngFor="let data of homePageResultSet" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 h-50">
             <div class="card shadow mt-2 mb-2 bg-white rounded hvr-bob" style="height: 15rem !important; cursor: pointer;" routerLink="/homeComponent/{{data.component}}">
                 <img src="{{data.src}}" class="card-img w-100 h-100" style="cursor: pointer;">
-                <div class="card-img-overlay" [ngClass]="{'text-black': !data.color, 'text-white':!data.color}">
+                <div class="card-body card-img-overlay" [ngClass]="{'text-black': !data.color, 'text-white':!data.color}">
                     <h5 class="card-title display-4">{{ data.name }}</h5>
                     <p class="card-text h5 font-weight-bold text-monospace">{{data.content}}</p>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="col-12 ">
+            <div class="row ">
+                <div class="col-6 ">
+                    <div routerLink="/homeComponent/searchComponent" class="card shadow mt-2 mb-2 bg-white rounded hvr-bob col-12 p-0" style="height: 15rem !important; cursor: pointer;">
+                        <img src="./assets/images/search.png" class="card-img w-100 h-100" style="cursor: pointer;">
+                        <div class="card-body card-img-overlay">
+                            <h5 class="card-title display-4 reduceFont">Search</h5>
+                            <h5 class="increaseFont card-title"><span class="display-4">S</span><span>earch</span></h5>
+                            <p class="card-text h5 font-weight-bold text-monospace reduceFont">Do you want to know more about Shivamogga!?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 ">
+                    <div routerLink="/homeComponent/searchComponent" class="card shadow mt-2 mb-2 bg-white rounded hvr-bob col-12 p-0" style="height: 15rem !important; cursor: pointer;">
+                        <img src="./assets/images/food.PNG" class="card-img w-100 h-100" style="cursor: pointer;">
+                        <div class="card-body card-img-overlay">
+                            <h5 class="card-title display-4 reduceFont">Food</h5>
+                            <h5 class="increaseFont card-title"><span class="display-4">F</span><span>ood</span></h5>
+                            <p class="card-text h5 font-weight-bold text-monospace reduceFont">Do you want to have Shivamogga's special food delivered to your door step!?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-6 ">
+                    <div routerLink="/homeComponent/searchComponent" class="card shadow mt-2 mb-2 bg-white rounded hvr-bob col-12 p-0" style="height: 15rem !important; cursor: pointer;">
+                        <img src="./assets/images/shopping.jpg" class="card-img w-100 h-100" style="cursor: pointer;">
+                        <div class="card-body card-img-overlay">
+                            <h5 class="card-title display-4 reduceFont">Shopping</h5>
+                            <h5 class="increaseFont card-title"><span class="display-4">S</span><span>hopping</span></h5>
+                            <p class="card-text h5 font-weight-bold text-monospace reduceFont">Do you want buy something in Shivamogga!?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 ">
+                    <div routerLink="/homeComponent/searchComponent" class="card shadow mt-2 mb-2 bg-white rounded hvr-bob col-12 p-0" style="height: 15rem !important; cursor: pointer;">
+                        <img src="./assets/images/travel.png" class="card-img w-100 h-100" style="cursor: pointer;">
+                        <div class="card-body card-img-overlay">
+                            <h5 class="card-title display-4 reduceFont">Travel</h5>
+                            <h5 class="increaseFont card-title"><span class="display-4">T</span><span>ravel</span></h5>
+                            <p class="card-text h5 font-weight-bold text-monospace reduceFont">Do you want to travel to the most exiting places near Shivamogga!?</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
