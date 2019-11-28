@@ -4,15 +4,13 @@
             <div class="row justify-content-center">
                 <div class="form-group col-9 col-sm-9 col-md-3 col-lg-3 col-xl-3 p-2">
                     <label class="h4">Search</label>
-                    <input [(ngModel)]="requestData.search_data" id="search" type="text"
-                        class="form-control form-control-underlined" placeholder="Search">
+                    <input [(ngModel)]="requestData.search_data" id="search" type="text" class="form-control form-control-underlined" placeholder="Search" [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="form-group col-9 col-sm-9 col-md-3 col-lg-3 col-xl-3 p-2">
                     <label class="h4">Category</label>
-                    <select [(ngModel)]="requestData.category"
-                        class="form-control custom-select form-control-underlined style-overflow" id="searchCategory"
-                        name="searchCategory">
-                        <option value="all" selected>All</option>
+                    <select [(ngModel)]="requestData.search_category" class="form-control custom-select form-control-underlined" id="searchCategory" name="searchCategory" value='All'>
+                        <option disabled hidden [value]="select1">-- select --</option>
+                        <option value="all">All</option>
                         <option value="agriculture">Agriculture &amp; Fertilizers</option>
                         <option value="atm">ATM</option>
                         <option value="banks">Banks</option>
@@ -51,9 +49,9 @@
                 </div>
                 <div class="form-group col-9 col-sm-9 col-md-3 col-lg-3 col-xl-3 p-2">
                     <label class="h4">Area</label>
-                    <select [(ngModel)]="requestData.area" class="form-control custom-select form-control-underlined"
-                        id="searchArea" name="searchArea">
-                        <option value="all" selected>All</option>
+                    <select [(ngModel)]="requestData.search_area" class="form-control custom-select form-control-underlined" id="searchArea" name="searchArea">
+                        <option disabled hidden [value]="select2">-- select --</option>
+                        <option value="all">All</option>
                         <option value="apmcyard">APMC Yard</option>
                         <option value="balrajursroad">Balraj Urs Road</option>
                         <option value="bhroad">B H Road</option>
@@ -96,41 +94,51 @@
                 <button type="button" class="col-6 col-sm-3 m-2 btn btn-danger" (click)="clearData()">Clear</button>
             </div>
         </div>
+        <div class="row text-center justify-content-center d-none">
+            <div class=" col-6 ">
+                <div class="alert alert-warning alert-dismissible fade hide" role="alert">
+                    <strong>Oops!</strong> You should fill all the fields above.
+                    <button type="button " class="close " data-dismiss="alert " aria-label="Close ">
+                      <span aria-hidden="true ">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <hr>
 
-<div class="container-fluid">
-    <div class="row overflow-auto justify-content-center style-overflow" style="height: 18rem;">
-        <div *ngFor="let details of responseData" class="card col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 m-2 shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title">{{details.Dname}}</h5>
+<div class="container-fluid ">
+    <div class="row overflow-auto justify-content-center style-overflow " style="height: 18rem; ">
+        <div *ngFor="let details of responseData " class="card col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 m-2 shadow-sm search-card-background ">
+            <div class="card-body ">
+                <h5 class="card-title ">{{details.Dname}}</h5>
                 <hr>
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-6">
-                            <label class="h6">Name</label>
-                            <p class="card-text">{{details.Pname}}</p>
+                <div class="col-12 ">
+                    <div class="row ">
+                        <div class="col-6 ">
+                            <label class="h6 ">Name</label>
+                            <p class="card-text ">{{details.Pname}}</p>
                         </div>
-                        <div class="col-6">
-                            <label class="h6">Address</label>
-                            <p class="card-text">{{details.Address}} {{details.Mobile}}</p>
+                        <div class="col-6 ">
+                            <label class="h6 ">Address</label>
+                            <p class="card-text ">{{details.Address}} {{details.Mobile}}</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <label class="h6">Mobile number</label>
-                            <p class="card-text">{{details.Mobile}}</p>
+                    <div class="row ">
+                        <div class="col-6 ">
+                            <label class="h6 ">Mobile number</label>
+                            <p class="card-text ">{{details.Mobile}}</p>
                         </div>
-                        <div class="col-6">
-                            <label class="h6">Mail ID</label>
-                            <p class="card-text">{{details.Email==""?"---":"details.Email"}} </p>
+                        <div class="col-6 ">
+                            <label class="h6 ">Mail ID</label>
+                            <p class="card-text ">{{details.Email==" "?"--- ":"details.Email "}} </p>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <p class="card-text"><small class="text-muted">updated - 3 mins ago</small></p>
+                <p class="card-text "><small class="text-muted ">updated - 3 mins ago</small></p>
             </div>
         </div>
     </div>
