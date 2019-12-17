@@ -10,7 +10,7 @@ import { $ } from 'protractor';
 })
 export class SearchComponent implements OnInit {
 
-  requestData: any[] = [];
+  requestData: any = [];
   responseData: any = [];
   select1: any;
   select2: any;

@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private isHome:boolean = true;
-  private isAbout:boolean = false;
+  public isHome:boolean = true;
+  public isAbout:boolean = false;
 
   setCurrent(event){
     console.log(event.target.innerText);
